@@ -11,7 +11,12 @@ const info = ref({
 const instructor = reactive({
   name: '山田太郎',
   age: 34,
+  // reactive内に、refオブジェクトがあった場合は？ valueなして、アクセスができる
+  email: ref('なし'),
 })
+
+// 下記のようにオブジェクトとして、追加することもでき、さらにreactiveになる
+instructor.sns = 'twiiter'
 
 // refの場合は、.valueで値を参照できる
 console.log(info.value.students)
@@ -21,7 +26,27 @@ console.log(instructor.name)
 function increment() {
   info.value.students += 1
   instructor.age += 1
+  // 下記で、リアクティブになっていることがわかる
+  instructor.sns = '@〇〇'
+  // 下記、reactive内のrefもvvalueが自動付与されているので、不要
+  instructor.email = 'tarou@gmail.com'
 }
+
+// ただし、reactiveに、配列を入れる場合は、注意！！！！.valueが付与されないので、
+// なぜ、上記のような扱いなのか？配列には、いろんなメソッドあるため。
+// 例えば、refではないデータも混じっているとき、.valueを省略できてしまうと、
+// items.reverse()で、[ref(4), ref(1), ref(2), 3]というように、
+// 意図しない挙動になる可能性があるため、明示的に、valueをつけるようにしている
+const items = reactive([ref(1), ref(2), ref(3)], 4)
+console.log(items[0])
+
+// オブジェクトの中に、ref要素がある場合。テンプレートからアクセスをしたい場合は、注意点が必要！
+const courseInfo = {
+  sections: ref(10),
+  language: 'Japanese',
+}
+// script内では、下記のようにアクセスできる
+console.log(courseInfo.sections.value)
 </script>
 
 <template>
@@ -36,4 +61,10 @@ function increment() {
   >
     ボタン
   </button>
+  <p>{{ instructor.sns }}</p>
+  <p>{{ instructor.email }}</p>
+
+  <!-- テンプレートでアクセスする場合は、.valueが必要 -->
+  <p>{{ courseInfo.sections.value }}</p>
+  <p>{{ courseInfo.language }}</p>
 </template>

@@ -1,21 +1,18 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import Reactive from './components/Reactive.vue'
 </script>
 
 <template>
-  <header class="bg-gray">
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="wrapper red-500">
+    <h2 class="text-lg font-bold">ref、reactiveの違い</h2>
+    <Reactive msg="You did it!" />
 
-    <div class="wrapper red-500">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+    </nav>
+  </div>
 
   <RouterView />
 </template>

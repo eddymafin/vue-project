@@ -1,6 +1,7 @@
 <script setup>
 import Reactive from '@components/Reactive.vue'
 import Event from '@components/Event.vue'
+import Loop from './Loop.vue'
 </script>
 <template>
   <!-- Blog Article -->
@@ -20,6 +21,7 @@ import Event from '@components/Event.vue'
       </div>
       <!-- End Content -->
     </div>
+    <Loop />
   </div>
   <!-- End Blog Article -->
 </template>

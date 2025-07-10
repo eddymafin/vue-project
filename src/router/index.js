@@ -13,6 +13,21 @@ const router = createRouter({
       component: () => import('../views/Basic.vue'),
     },
     {
+      path: '/practice',
+      name: 'practice',
+      component: () => import('../views/Practice.vue'),
+    },
+    {
+      path: '/computed',
+      name: 'computed',
+      component: () => import('../views/Computed.vue'),
+    },
+    {
+      path: '/watcher',
+      name: 'watcher',
+      component: () => import('../views/Watcher.vue'),
+    },
+    {
       path: '/form',
       name: 'form',
       // route level code-splitting

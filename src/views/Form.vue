@@ -1,3 +1,7 @@
+<script setup>
+import { ref } from 'vue'
+const userName = ref()
+</script>
 <template>
   <!-- Contact Us -->
   <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -27,6 +31,7 @@
                 >
                 <input
                   id="hs-name-contacts-1"
+                  v-model="userName"
                   type="text"
                   name="hs-name-contacts-1"
                   class="py-2.5 sm:py-3 px-4 block w-full border border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"

@@ -33,6 +33,11 @@ const router = createRouter({
       component: () => import('../views/Component.vue'),
     },
     {
+      path: '/life-cicle',
+      name: 'life-cicle',
+      component: () => import('../views/LifeCicle.vue'),
+    },
+    {
       path: '/form',
       name: 'form',
       // route level code-splitting

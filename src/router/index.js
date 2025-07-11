@@ -28,6 +28,11 @@ const router = createRouter({
       component: () => import('../views/Watcher.vue'),
     },
     {
+      path: '/component',
+      name: 'component',
+      component: () => import('../views/Component.vue'),
+    },
+    {
       path: '/form',
       name: 'form',
       // route level code-splitting

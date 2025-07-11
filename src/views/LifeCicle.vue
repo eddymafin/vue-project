@@ -2,8 +2,6 @@
 import ShowMessage from '@/components/ShowMessage.vue'
 import { ref } from 'vue'
 
-const count = ref(0)
-
 const flag = ref(true)
 function toggleButton() {
   flag.value = !flag.value
@@ -21,17 +19,10 @@ function toggleButton() {
       >
         表示切り替え
       </button>
-      <button
-        type="button"
-        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-emerald-400 text-white hover:bg-emerald-700 focus:outline-hidden focus:bg-emerald-700 disabled:opacity-50 disabled:pointer-events-none"
-        @click="count++"
-      >
-        カウントアップ
-      </button>
     </div>
 
     <template v-if="flag">
-      <ShowMessage :count="count" />
+      <ShowMessage />
     </template>
 
     <!-- Timeline -->

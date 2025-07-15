@@ -50,6 +50,11 @@ const router = createRouter({
       name: 'composable',
       component: () => import('../views/Composable.vue'),
     },
+    {
+      path: '/router',
+      name: 'router',
+      component: () => import('../views/Router.vue'),
+    },
   ],
 })
 

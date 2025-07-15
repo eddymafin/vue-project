@@ -24,8 +24,9 @@ import { RouterLink } from 'vue-router'
         <div
           class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7"
         >
+          <!-- nameを使って、urlもできる。設定は、必ずオブジェクトの形で設定する必要がある -->
           <RouterLink
-            to="/basic"
+            :to="{ name: 'basic' }"
             class="py-0.5 md:py-3 px-4 md:px-1 font-medium text-gray-800 hover:text-gray-800 focus:outline-hidden dark:border-neutral-200 dark:text-neutral-200 dark:hover:text-neutral-200"
           >
             Basic

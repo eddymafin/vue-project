@@ -197,6 +197,43 @@ import { RouterLink } from 'vue-router'
         </div>
       </RouterLink>
       <!-- End Card -->
+
+      <!-- Card -->
+      <RouterLink to="/router">
+        <div class="size-full bg-white shadow-lg rounded-lg p-5 dark:bg-neutral-900">
+          <div class="flex items-center gap-x-4 mb-3">
+            <div
+              class="inline-flex justify-center items-center size-15.5 rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800"
+            >
+              <svg
+                class="shrink-0 size-6 text-blue-600 dark:text-blue-400"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"
+                />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <circle cx="17.5" cy="17.5" r="3.5" />
+              </svg>
+            </div>
+            <div class="shrink-0">
+              <h3 class="break-all block text-lg font-semibold text-gray-800 dark:text-white">
+                UseRouteについて
+              </h3>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-neutral-400">動的にrouterを設定</p>
+        </div>
+      </RouterLink>
+      <!-- End Card -->
     </div>
   </div>
   <!-- End Icon Blocks -->

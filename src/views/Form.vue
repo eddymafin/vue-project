@@ -1,10 +1,15 @@
 <script setup>
 import { ref } from 'vue'
+import Input from '@/components/Input.vue'
 const userName = ref('')
+const userName2 = ref('テスト')
+
 const policy = ref('同意しない')
+const number = ref()
 const multiple = ref([])
 const gender = ref('')
 const phone = ref('')
+const content = ref('')
 </script>
 <template>
   <!-- Contact Us -->
@@ -28,17 +33,13 @@ const phone = ref('')
             <!-- Grid -->
             <div class="grid grid-cols-1 gap-4 lg:gap-6">
               <div>
-                <label
-                  for="hs-name-contacts-1"
-                  class="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
-                  >名前</label
-                >
-                <input
-                  id="hs-name-contacts-1"
+                <p>{{ userName }}</p>
+                <p>{{ userName2 }}</p>
+                <Input
                   v-model="userName"
-                  type="text"
-                  name="hs-name-contacts-1"
-                  class="py-2.5 sm:py-3 px-4 block w-full border border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                  v-model:title-name="userName2"
+                  :name="'hs-name-contacts-1'"
+                  :title="'名前'"
                 />
               </div>
             </div>
@@ -61,12 +62,14 @@ const phone = ref('')
             </div>
             <!-- End Grid -->
             <!-- セレクト -->
+            {{ typeof number }}
             <label for="phone" class="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
               >電話番号</label
             >
             <div class="flex">
               <input
                 id="phone"
+                v-model.number="number"
                 type="text"
                 class="py-1.5 sm:py-2 px-3 pe-11 block border w-full border-gray-200 shadow-2xs -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg sm:text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="+x(xxx)xxx-xx-xx"
@@ -83,6 +86,7 @@ const phone = ref('')
             </div>
 
             <div>
+              {{ content }}
               <label
                 for="hs-about-contacts-1"
                 class="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
@@ -90,6 +94,7 @@ const phone = ref('')
               >
               <textarea
                 id="hs-about-contacts-1"
+                v-model.trim.lazy="content"
                 name="hs-about-contacts-1"
                 rows="4"
                 class="py-2.5 sm:py-3 px-4 block w-full border border-gray-200 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"

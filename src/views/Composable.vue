@@ -3,8 +3,8 @@ import Counter from '@components/Counter.vue'
 import { ref } from 'vue'
 import IconCheck from '@/components/icons/IconCheck.vue'
 import Input from '@/components/Input.vue'
-import { refLimitedHistory } from '@/composable/refLimitedHistory'
-import { refHistory } from '@/composable/refHistory'
+import { useRefLimitedHistory } from '@/composable/useRefLimitedHistory'
+import { useRefHistory } from '@/composable/useRefHistory'
 const count = ref(0)
 
 // 使い回しができるように関数化→他のコンポーネントでも使いまわしができるように、別refHistory.jsファイルに以降
@@ -26,10 +26,10 @@ const count = ref(0)
 //   }
 // }
 
-const { history, undo } = refLimitedHistory(count, 4)
+const { history, undo } = useRefLimitedHistory(count, ref(4))
 
 const userInput = ref('')
-const { history: history2, undo: undo2 } = refHistory(userInput)
+const { history: history2, undo: undo2 } = useRefHistory(userInput)
 </script>
 <template>
   <!-- Blog Article -->
@@ -49,6 +49,12 @@ const { history: history2, undo: undo2 } = refHistory(userInput)
             <IconCheck />
             <span class="text-gray-800 dark:text-neutral-400 font-bold">
               Composableは、同期的に呼び出すようにすること
+            </span>
+          </li>
+          <li class="flex gap-x-2">
+            <IconCheck />
+            <span class="text-gray-800 dark:text-neutral-400 font-bold">
+              Composableの関数名は、慣例ではuseからはじめるようにする
             </span>
           </li>
         </ul>

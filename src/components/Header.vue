@@ -43,6 +43,18 @@ import { RouterLink } from 'vue-router'
           >
             Form
           </RouterLink>
+          <RouterLink
+            :to="{
+              name: 'blog',
+              params: {
+                id: 4,
+                version: 'foo',
+              },
+            }"
+            class="py-0.5 md:py-3 px-4 md:px-1 font-medium text-gray-800 hover:text-gray-800 focus:outline-hidden dark:border-neutral-200 dark:text-neutral-200 dark:hover:text-neutral-200"
+          >
+            Blog
+          </RouterLink>
         </div>
       </div>
     </nav>

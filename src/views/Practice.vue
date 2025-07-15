@@ -193,7 +193,7 @@ import { RouterLink } from 'vue-router'
               </h3>
             </div>
           </div>
-          <p class="text-gray-600 dark:text-neutral-400">コンポーネントのライフサイクルについて</p>
+          <p class="text-gray-600 dark:text-neutral-400">Composition APIについて</p>
         </div>
       </RouterLink>
       <!-- End Card -->

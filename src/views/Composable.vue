@@ -1,7 +1,9 @@
 <script setup>
 import Counter from '@components/Counter.vue'
 import { ref } from 'vue'
+import IconCheck from '@/components/icons/IconCheck.vue'
 import Input from '@/components/Input.vue'
+import { refLimitedHistory } from '@/composable/refLimitedHistory'
 import { refHistory } from '@/composable/refHistory'
 const count = ref(0)
 
@@ -24,7 +26,7 @@ const count = ref(0)
 //   }
 // }
 
-const { history, undo } = refHistory(count)
+const { history, undo } = refLimitedHistory(count, 4)
 
 const userInput = ref('')
 const { history: history2, undo: undo2 } = refHistory(userInput)
@@ -38,8 +40,18 @@ const { history: history2, undo: undo2 } = refHistory(userInput)
         <h2 class="text-2xl font-bold md:text-3xl dark:text-white">Composableについて</h2>
 
         <p class="text-lg text-gray-800 dark:text-neutral-200 mb-10">
-          vueの機能が盛り込まれた関数のことを、Composableという。ロジックを切り離して、コンポーネント単位で使いまわしたい場合に便利。
+          vueの機能が盛り込まれた関数のことを、Composableという。ロジックを切り離して、コンポーネント単位で使いまわしたい場合に便利。<br />
+          またこのような機能をまとめて、Composition APIという
         </p>
+
+        <ul class="mt-7 space-y-2.5 text-sm">
+          <li class="flex gap-x-2">
+            <IconCheck />
+            <span class="text-gray-800 dark:text-neutral-400 font-bold">
+              Composableは、同期的に呼び出すようにすること
+            </span>
+          </li>
+        </ul>
         <Counter :value="count" />
         <button
           type="button"

@@ -6,7 +6,9 @@
       <!-- Content -->
       <div class="space-y-5 md:space-y-8">
         <div class="space-y-3">
-          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">Blog</h2>
+          <h2 class="text-2xl font-bold md:text-3xl dark:text-white">
+            Blog(id:{{ $route.params.id }})
+          </h2>
 
           <p class="text-lg text-gray-800 dark:text-neutral-200 mb-10">テスト</p>
         </div>
